@@ -1,0 +1,10 @@
+{% load crispy_forms_tags %}
+<title>{%block title%}Sign Up{%endblock title%}</title>
+
+{%block content%}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign up</button>
+    </form>
+{%endblock content%}
