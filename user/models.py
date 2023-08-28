@@ -9,7 +9,6 @@ class Profile(models.Model):
     hobbi = models.CharField(max_length=50, null= True, blank=True)
     occupassion = models.CharField(max_length=250, null=True, blank=True)
     live_in = models.CharField(max_length=250, null= True, blank=True)
-    follows = models.ManyToManyField(get_user_model(), related_name='followed_by', symmetrical=False, blank=True)
 
 
     def __str__(self):
