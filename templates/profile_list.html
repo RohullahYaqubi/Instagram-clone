@@ -22,7 +22,7 @@
                 </div>
                 <h4 class="mb-2">{{ profile.user.first_name }}</h4>
                 <p class="text-muted mb-4">{{ profile.occupassion }} <span class="mx-2">|</span> <a
-                        href="">{{ profile.user.username }}</a></p>
+                        href="{%url 'profile_detail' profile.user.id%}">{{ profile.user.username }}</a></p>
                 <form method="POST">
                     <button type="button" class="btn btn-primary btn-rounded btn-lg">
                         Follow

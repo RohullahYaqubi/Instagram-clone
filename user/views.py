@@ -24,7 +24,12 @@ def profile_list(request):
     }
     return render(request,'profile_list.html', context)
 
-
+def profile_detail(request, pk):
+    profile = Profile.objects.get(user_id = pk)
+    context={
+        'profile':profile
+    }
+    return render(request, 'profile_detail.html',context )
 
 
 # Create your views here.
