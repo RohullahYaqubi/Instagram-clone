@@ -19,15 +19,25 @@
                     alt="" class="img-fluid img-thumbnail mt-4 mb-2"
                     style="width: 150px; z-index: 1">
                 {%endif%}
-                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
-                style="z-index: 1;">
-                Follow
-                </button>
+                <h5  style="z-index: 1; color:black;">{{profile.user.first_name}} {{profile.user.last_name}}</h5>
+                <p style="z-index: 1; color:black;">{{profile.user.username}}</p>
+                
             </div>
-            <div class="ms-3" style="margin-top: 130px;">
-                <h5>{{profile.user.first_name}} {{profile.user.last_name}}</h5>
-                <p>{{profile.user.username}}</p>
-            </div>
+            <form method="POST"style="margin-top:160px; margin-left:5px;">
+                {% csrf_token %}
+                {%if profile in myprofile.follows.all%}
+                    <button  class="btn btn-outline-danger" data-mdb-ripple-color="dark"
+                    style="z-index: 1;" name="followunfollow" value="unfollow" type="submit">
+                        Unfollow
+                    </button>
+                {% elif profile not in myprofile.follows.all %}
+                    <button  class="btn btn-outline-success" data-mdb-ripple-color="dark"
+                    style="z-index: 1;" name="followunfollow" value="follow" type="submit">
+                        Follow
+                    </button>
+                {%endif%}
+                
+            </form>
             </div>
             <div class="p-4 text-black" style="background-color: #f8f9fa;">
             <div class="d-flex justify-content-end text-center py-1">

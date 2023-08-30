@@ -25,9 +25,19 @@ def profile_list(request):
     return render(request,'profile_list.html', context)
 
 def profile_detail(request, pk):
-    profile = Profile.objects.get(user_id = pk)
+    profile = Profile.objects.get(user_id = pk) 
+    myprofile = Profile.objects.get(user = request.user)
+
+    if request.method == "POST":
+        action = request.POST['followunfollow']
+        if action == "unfollow":
+            myprofile.follows.remove(profile)
+        elif action == "follow":
+            myprofile.follows.add(profile)
+   
     context={
-        'profile':profile
+        'profile':profile,
+        'myprofile':myprofile
     }
     return render(request, 'profile_detail.html',context )
 
