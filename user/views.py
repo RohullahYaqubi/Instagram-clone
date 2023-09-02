@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.db.models import Q
 from .models import Profile
 
-def homepage(request):
-    return render(request, 'home.html')
 
 def profile_view(request):
     user_profile = Profile.objects.get(user= request.user)

@@ -1,7 +1,15 @@
 {% extends '_base.html' %}
+{% load static %}
 
-<title>{%block title%}Home Page{%endblock title%}</title>
+<head>
+    <title>{%block title%}Home Page{%endblock title%}</title>
+</head>
 
 {%block content%}
-
+    <h1>hi</h1>
+    <div class="posts">
+    {%for post in posts%}
+        <img class="imgpost" src="{{post.image.url}}">
+    {% endfor %}
+    </div>
 {%endblock content%}

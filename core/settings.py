@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     #local
     'user.apps.UserConfig',
+    'posts.apps.PostsConfig',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

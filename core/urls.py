@@ -26,7 +26,8 @@ urlpatterns = [
     path('accounts/', include('allauth.urls') ),
 
     # local
-    path('', include('user.urls')),
+    path('accounts/', include('user.urls')),
+    path('', include('posts.urls')),
 ]
 
 if settings.DEBUG:
