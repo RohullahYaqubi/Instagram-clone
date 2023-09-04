@@ -20,14 +20,12 @@
                         alt="" class="img-fluid img-thumbnail mt-4 mb-2"
                         style="width: 150px; z-index: 1">
                     {%endif%}
-                    <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
-                    style="z-index: 1;">
-                    Edit profile
-                    </button>
+                    <h5  style="z-index: 1; color:black;">{{profile.user.first_name}}{{profile.user.last_name}}</h5>
+                <p style="z-index: 1; color:black;">{{profile.user.username}}</p>
+                    
                 </div>
                 <div class="ms-3" style="margin-top: 130px;">
-                    <h5>{{profile.user.first_name}} {{profile.user.last_name}}</h5>
-                    <p>New York</p>
+                    <a href="{%url 'profileedit'%}" style="margin-top:160px; margin-left:5px; color:white; text-decoration: none; ">Edit profile</a>
                 </div>
                 </div>
                 <div class="p-4 text-black" style="background-color: #f8f9fa;">

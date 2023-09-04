@@ -39,5 +39,8 @@ def profile_detail(request, pk):
     }
     return render(request, 'profile_detail.html',context )
 
+def profile_edit_view(request):
+    return render(request, 'profile_edit.html')
+
 
 # Create your views here.
