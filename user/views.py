@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from django.db.models import Q
 from .models import Profile
+from posts.models import Post
 
 
 def profile_view(request):
     user_profile = Profile.objects.get(user= request.user)
+    post = Post.objects.filter(user = request.user)
 
     context={
-        'profile':user_profile
+        'profile':user_profile,
+        'post':post
     }
     return render(request, 'profile.html', context)
 
@@ -25,6 +28,7 @@ def profile_list(request):
 def profile_detail(request, pk):
     profile = Profile.objects.get(user_id = pk) 
     myprofile = Profile.objects.get(user = request.user)
+    post = Post.objects.filter(user_id = pk)
 
     if request.method == "POST":
         action = request.POST['followunfollow']
@@ -35,7 +39,8 @@ def profile_detail(request, pk):
    
     context={
         'profile':profile,
-        'myprofile':myprofile
+        'myprofile':myprofile,
+        'post':post
     }
     return render(request, 'profile_detail.html',context )
 

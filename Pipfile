@@ -11,6 +11,7 @@ django-environ = "*"
 django-allauth = "*"
 django-crispy-forms = "*"
 crispy-bootstrap4 = "*"
+django-debug-toolbar = "*"
 
 [dev-packages]
 
